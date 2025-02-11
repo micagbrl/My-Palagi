@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Invitation</title>
+    <style>
+        body {
+            background-color: #FFFF;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #0000;
+            text-shadow: 2px 2px 4px (0, 0, 0, 0.2);
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff3366;
+            color: white;
+        }
+        .no {
+            background-color: #cccccc;
+            color: black;
+            position: absolute;
+        }
+        iframe {
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? 💖</h1>
+    <div class="buttons">
+        <button class="yes" onclick="yesClicked()">Yes</button>
+        <button class="no" onmouseover="moveNo()">No</button>
+    </div>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    <script>
+        function yesClicked() {
+            document.body.innerHTML = '<h1>Yay! Can\'t wait for our date! 💕</h1>' +
+                                      '<iframe width="300" height="200" src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+        }
+        function moveNo() {
+            let noButton = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
